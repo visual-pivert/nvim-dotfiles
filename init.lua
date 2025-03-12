@@ -15,6 +15,7 @@ require("lazy").setup({ -- Install lazy first`
 	'Omnisharp/omnisharp-vim',
 	'preservim/nerdtree',
 	'ryanoasis/vim-devicons',
+	'airblade/vim-gitgutter',
 
 	'folke/tokyonight.nvim' -- theme
 })
