@@ -36,7 +36,23 @@ lspconfig.omnisharp.setup {
 }
 
 lspconfig.pyright.setup {} -- Install pyright first
-lspconfig.lua_ls.setup {} -- Install luarocks and lua-language-server first
+
+lspconfig.lua_ls.setup { -- Install luarocks and lua-language-server first 
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim' }
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+				checkThirdParty = false,
+			},
+			telemetry = {
+				enable = false
+			},
+		},
+	},
+}
 
 -- Configuration de l'autocomplétion
 local cmp = require("cmp")
