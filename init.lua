@@ -6,7 +6,7 @@ vim.opt.mouse = "a"
 
 -- PLUGINS
 vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
-require("lazy").setup({
+require("lazy").setup({ -- Install lazy first`
 	'neovim/nvim-lspconfig',
 	'hrsh7th/nvim-cmp',
 	'hrsh7th/cmp-nvim-lsp',
@@ -27,14 +27,14 @@ local lspconfig = require('lspconfig')
 
 -- Configuration de l'omnisharp LSP
 lspconfig.omnisharp.setup {
-	cmd = { "omnisharp" }, -- L'outil Omnisharp que tu as installé
+	cmd = { "omnisharp" }, -- Install Omnisharp-roslyn first 
 	enable_roslyn_analyzers = true,
 	enable_import_completion = true,
 	root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj"),
 }
 
-lspconfig.pyright.setup {}
-lspconfig.lua_ls.setup {}
+lspconfig.pyright.setup {} -- Install pyright first
+lspconfig.lua_ls.setup {} -- Install luarocks and lua-language-server first
 
 -- Configuration de l'autocomplétion
 local cmp = require("cmp")
