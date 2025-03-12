@@ -2,7 +2,7 @@
 vim.opt.number = true
 vim.opt.syntax = "on"
 vim.opt.mouse = "a"
-vim.opt.signcolumn = "auto:2"
+vim.opt.signcolumn = "auto:1"
 
 -- PLUGINS
 vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
@@ -83,7 +83,7 @@ require("gitsigns").setup({
 		interval = 1000,
 		follow_files = true
 	},
-	sign_priority = 6,
+	sign_priority = 20,
 	update_debounce = 100,
 	status_formatter = nil,
 })
