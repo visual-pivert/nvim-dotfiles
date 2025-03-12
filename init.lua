@@ -2,7 +2,7 @@
 vim.opt.number = true
 vim.opt.syntax = "on"
 vim.opt.mouse = "a"
-
+vim.opt.signcolumn = "auto:2"
 
 -- PLUGINS
 vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
@@ -15,7 +15,8 @@ require("lazy").setup({ -- Install lazy first`
 	'Omnisharp/omnisharp-vim',
 	'preservim/nerdtree',
 	'ryanoasis/vim-devicons',
-	'airblade/vim-gitgutter',
+	'lewis6991/gitsigns.nvim', -- deps: plenary
+	'nvim-lua/plenary.nvim', -- utilities function for async etc
 
 	'folke/tokyonight.nvim' -- theme
 })
@@ -51,6 +52,24 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 	},
+})
+
+-- Configuration de gitsign
+require("gitsigns").setup({
+	signs = {
+		add          = { text = "|" },
+		change       = { text = "|" },
+		delete       = { text = "󰍵" },
+		topdelete    = { text = "‾" },
+		changedelete = { text = "~" },
+	},
+	watch_gitdir = {
+		interval = 1000,
+		follow_files = true
+	},
+	sign_priority = 6,
+	update_debounce = 100,
+	status_formatter = nil,
 })
 
 -- Ajout des icones pour nerdtree
