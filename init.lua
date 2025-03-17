@@ -59,6 +59,20 @@ lspconfig.lua_ls.setup { -- Install luarocks and lua-language-server first
 
 lspconfig.texlab.setup{} -- Install texlab first
 
+-- npm install -g vscode-langservers-extracted typescript typescript-language-server emmet-ls
+lspconfig.ts_ls.setup{
+	capabilities = require('cmp_nvim_lsp').default_capabilities(),
+	filetypes = { "javascript", "typescript" },
+} -- Install typescript-language-server first
+lspconfig.emmet_ls.setup{
+	capabilities = require('cmp_nvim_lsp').default_capabilities(),
+	filetypes = { "html", "css", "javascript", "typescript", "php" },
+} -- Install vscode-html-languageserver-bin first
+lspconfig.cssls.setup{
+	capabilities = require('cmp_nvim_lsp').default_capabilities(),
+	filetypes = { "css", "scss", "less" },
+} -- Install vscode-css-languageserver-bin first
+
 -- Configuration de l'autocomplétion
 local cmp = require("cmp")
 cmp.setup({
