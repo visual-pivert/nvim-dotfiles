@@ -18,6 +18,8 @@ require("lazy").setup({ -- Install lazy first`
 	'lewis6991/gitsigns.nvim', -- deps: plenary
 	'nvim-lua/plenary.nvim', -- utilities function for async etc
 
+	'lervag/vimtex', -- latex integration
+
 	'folke/tokyonight.nvim' -- theme
 })
 
@@ -88,8 +90,13 @@ require("gitsigns").setup({
 	status_formatter = nil,
 })
 
--- Ajout des icones pour nerdtree
-vim.g['NERDTreeShowIcons'] = 1
+-- Configuration de nerdtree
+vim.g.NERDTreeShowIcons = 1
+vim.g.NERDTreeShowHidden = 1
+
+-- Configuration de l'integration de latex
+vim.g.vimtex_view_method = 'zathura' -- install zathura and zathura-pdf-poppler and texlive-binextra first
+vim.g.vimtex_compiler_method = 'latexmk'
 
 -- Configuration des raccourcis clavier pour Nerdtree
 vim.api.nvim_set_keymap('n', '<C-n>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
