@@ -61,17 +61,38 @@ lspconfig.texlab.setup{} -- Install texlab first
 
 -- npm install -g vscode-langservers-extracted typescript typescript-language-server emmet-ls
 lspconfig.ts_ls.setup{
+	cmd = { "typescript-language-server", "--stdio" },
 	capabilities = require('cmp_nvim_lsp').default_capabilities(),
-	filetypes = { "javascript", "typescript" },
+	filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
 } -- Install typescript-language-server first
-lspconfig.emmet_ls.setup{
-	capabilities = require('cmp_nvim_lsp').default_capabilities(),
-	filetypes = { "html", "css", "javascript", "typescript", "php" },
-} -- Install vscode-html-languageserver-bin first
-lspconfig.cssls.setup{
-	capabilities = require('cmp_nvim_lsp').default_capabilities(),
+
+lspconfig.html.setup({
+	cmd = { "vscode-html-language-server", "--stdio" },
+	filetypes = { "html" },
+	init_options = {
+		provideFormatter = true
+	}
+})
+
+lspconfig.cssls.setup({
+	cmd = { "vscode-css-language-server", "--stdio" },
 	filetypes = { "css", "scss", "less" },
-} -- Install vscode-css-languageserver-bin first
+	settings = {
+		css = { validate = true },
+		scss = { validate = true },
+		less = { validate = true }
+	}
+})
+
+lspconfig.emmet_ls.setup({
+  cmd = { "emmet-ls", "--stdio" },
+  filetypes = { "html", "css", "scss", "javascriptreact", "typescriptreact" },
+  init_options = {
+    showexpandedabbreviation = true,
+    showabbreviationsuggestions = true,
+    syntaxProfiles = {},
+  }
+})
 
 -- Configuration de l'autocomplétion
 local cmp = require("cmp")
