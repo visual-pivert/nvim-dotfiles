@@ -56,6 +56,8 @@ lspconfig.lua_ls.setup { -- Install luarocks and lua-language-server first
 	},
 }
 
+lspconfig.texlab.setup{} -- Install texlab first
+
 -- Configuration de l'autocomplétion
 local cmp = require("cmp")
 cmp.setup({
