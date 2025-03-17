@@ -19,6 +19,7 @@ require("lazy").setup({ -- Install lazy first`
 	'nvim-lua/plenary.nvim', -- utilities function for async etc
 
 	'lervag/vimtex', -- latex integration
+	'github/copilot.vim',
 
 	'folke/tokyonight.nvim' -- theme
 })
@@ -108,3 +109,7 @@ vim.api.nvim_set_keymap('n', '<C-f>', ':NERDTreeFocus<CR>', { noremap = true, si
 -- Configuration des raccourcis
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', { noremap = true, silent = true })
 
+-- Configuration de copilot
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept()', { noremap = true, expr = true })
