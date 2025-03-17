@@ -128,6 +128,8 @@ require("gitsigns").setup({
 	status_formatter = nil,
 })
 
+require("underscore")
+
 -- Configuration de nerdtree
 vim.g.NERDTreeShowIcons = 1
 vim.g.NERDTreeShowHidden = 1
