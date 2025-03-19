@@ -18,7 +18,7 @@ require("lazy").setup({ -- Install lazy first`
 	'lewis6991/gitsigns.nvim', -- deps: plenary
 	'nvim-lua/plenary.nvim', -- utilities function for async etc
 
-	'lervag/vimtex', -- latex integration
+--	'lervag/vimtex', -- latex integration
 	'github/copilot.vim',
 
 	'folke/tokyonight.nvim' -- theme
@@ -57,7 +57,7 @@ lspconfig.lua_ls.setup { -- Install luarocks and lua-language-server first
 	},
 }
 
-lspconfig.texlab.setup{} -- Install texlab first
+--lspconfig.texlab.setup{} -- Install texlab first
 
 -- npm install -g vscode-langservers-extracted typescript typescript-language-server emmet-ls
 lspconfig.ts_ls.setup{
@@ -135,8 +135,8 @@ vim.g.NERDTreeShowIcons = 1
 vim.g.NERDTreeShowHidden = 1
 
 -- Configuration de l'integration de latex
-vim.g.vimtex_view_method = 'zathura' -- install zathura and zathura-pdf-poppler and texlive-binextra first
-vim.g.vimtex_compiler_method = 'latexmk'
+--vim.g.vimtex_view_method = 'zathura' -- install zathura and zathura-pdf-poppler and texlive-binextra first
+--vim.g.vimtex_compiler_method = 'latexmk'
 
 -- Configuration des raccourcis clavier pour Nerdtree
 vim.api.nvim_set_keymap('n', '<C-n>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
