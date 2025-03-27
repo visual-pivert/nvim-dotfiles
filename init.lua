@@ -15,6 +15,8 @@ require("lazy").setup({ -- Install lazy first`
 	'lewis6991/gitsigns.nvim', -- deps: plenary
 	'nvim-lua/plenary.nvim', -- utilities function for async etc
 	'nvim-lualine/lualine.nvim',
+	'nvim-telescope/telescope.nvim',
+	'nvim-telescope/telescope-fzf-native.nvim',
 
 	'github/copilot.vim',
 
@@ -31,6 +33,7 @@ require('plugins.lualine')
 require('plugins.nerdtree')
 require('plugins.underscore')
 require('plugins.copilot')
+require('plugins.telescope')
 
 -- import LANGUAGE SERVERS
 require('languages.csharp')
