@@ -10,7 +10,8 @@ function M.ToggleWorkspace(opts)
 	local path = conf.workspaces[wn]
 	if path then
 		M.CloseAll()
-		vim.api.nvim_command("NERDTree " .. path)
+		vim.cmd('cd ' .. path)  -- Change le répertoire actuel
+		vim.cmd('NvimTreeToggle')
 	else
 		print("Worspace not found: " .. wn)
 	end

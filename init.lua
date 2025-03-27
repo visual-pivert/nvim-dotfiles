@@ -10,13 +10,14 @@ require("lazy").setup({ -- Install lazy first`
 	'hrsh7th/cmp-buffer',
 	'hrsh7th/cmp-path',
 	'Omnisharp/omnisharp-vim',
-	'preservim/nerdtree',
+	'nvim-tree/nvim-tree.lua',
 	'ryanoasis/vim-devicons',
 	'lewis6991/gitsigns.nvim', -- deps: plenary
 	'nvim-lua/plenary.nvim', -- utilities function for async etc
 	'nvim-lualine/lualine.nvim',
 	'nvim-telescope/telescope.nvim',
 	'nvim-telescope/telescope-fzf-native.nvim',
+	'kdheepak/lazygit.nvim',
 
 	'github/copilot.vim',
 
@@ -30,10 +31,11 @@ vim.cmd[[colorscheme tokyonight]]
 require('plugins.cmp')
 require('plugins.gitsigns')
 require('plugins.lualine')
-require('plugins.nerdtree')
+require('plugins.nvim-tree')
 require('plugins.underscore')
 require('plugins.copilot')
 require('plugins.telescope')
+require('plugins.lazygit')
 
 -- import LANGUAGE SERVERS
 require('languages.csharp')
