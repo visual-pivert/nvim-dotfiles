@@ -7,9 +7,9 @@ vim.g.mapleader = " "
 vim.opt.backup = false
 vim.opt.swapfile = false
 
-vim.opt.tabstop = 4      -- nombre de colonnes pour une tabulation affichée
-vim.opt.shiftwidth = 4   -- nombre d'espaces utilisés pour l'indentation automatique (<< et >>)
-vim.opt.expandtab = true -- convertit les tabulations en espaces
+vim.opt.tabstop = 4      -- tab = 4 spaces when displayed
+vim.opt.shiftwidth = 4   -- indentation = 4 spaces
+vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.smarttab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
