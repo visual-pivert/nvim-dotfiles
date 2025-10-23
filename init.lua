@@ -1,1 +1,2 @@
-require("visualPivert.init")
+require("visual-pivert.init")
+
